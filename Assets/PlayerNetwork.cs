@@ -53,6 +53,19 @@ public class PlayerNetwork : NetworkBehaviour {
             Destroy(spawnedObjectTransform.gameObject);
         }
 
+        MoveClientRPC();
+    }
+
+    [ServerRpc]
+    private void TestServerRPC()
+    {
+        spawnedObjectTransform = Instantiate(spawnedObjectPrefab);
+        spawnedObjectTransform.GetComponent<NetworkObject>().Spawn(true);
+    }
+
+    [ClientRpc]
+    private void MoveClientRPC()
+    {
         Vector3 moveDir = new Vector3(0, 0, 0);
 
         if (Input.GetKey(KeyCode.W)) moveDir.y = +1f;
@@ -62,13 +75,5 @@ public class PlayerNetwork : NetworkBehaviour {
 
         float moveSpeed = 3f;
         transform.position += moveDir * moveSpeed * Time.deltaTime;
-
-    }
-
-    [ServerRpc]
-    private void TestServerRPC()
-    {
-        spawnedObjectTransform = Instantiate(spawnedObjectPrefab);
-        spawnedObjectTransform.GetComponent<NetworkObject>().Spawn(true);
     }
 }

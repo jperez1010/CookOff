@@ -32,7 +32,7 @@ public class TestLobby : MonoBehaviour
             Debug.Log("Signed in " + AuthenticationService.Instance.PlayerId);
         };
         await AuthenticationService.Instance.SignInAnonymouslyAsync();
-        playerName = "Felipe" + UnityEngine.Random.Range(10, 99);
+        playerName = "Player" + UnityEngine.Random.Range(10, 99);
         Debug.Log(playerName);
     }
 
