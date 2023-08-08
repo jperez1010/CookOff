@@ -7,6 +7,7 @@ using Unity.Services.Lobbies;
 using Unity.Services.Lobbies.Models;
 using System;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class TestLobby : MonoBehaviour
 {
@@ -248,6 +249,7 @@ public class TestLobby : MonoBehaviour
                         { KEY_START_GAME, new DataObject(DataObject.VisibilityOptions.Member, relayCode) }
                     }
                 });
+                await SceneManager.LoadSceneAsync(1);
             } catch (LobbyServiceException e)
             {
                 Debug.Log(e);
