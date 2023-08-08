@@ -34,6 +34,7 @@ public class TestLobby : MonoBehaviour
         await AuthenticationService.Instance.SignInAnonymouslyAsync();
         playerName = "Player" + UnityEngine.Random.Range(10, 99);
         Debug.Log(playerName);
+        LobbyCodeText.text = "";
     }
 
     public async void CreateLobby()
@@ -93,10 +94,13 @@ public class TestLobby : MonoBehaviour
         }
     }
 
-    public async void JoinLobbyByCode(string lobbyCode)
+    public async void JoinLobbyByCode(GameObject text)
     {
+        
         try
         {
+            string lobbyCode = text.GetComponent<TMP_InputField>().text;
+            Debug.Log(lobbyCode);
             JoinLobbyByCodeOptions joinLobbyByCodeOptions = new JoinLobbyByCodeOptions
             {
                 Player = GetPlayer()
