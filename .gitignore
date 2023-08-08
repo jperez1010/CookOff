@@ -6,3 +6,5 @@ ProjectSettings/
 UserSettings/
 
 *.csproj
+*.sln
+*.vsconfig
