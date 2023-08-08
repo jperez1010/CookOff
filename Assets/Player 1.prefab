@@ -94,8 +94,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3448464663713173738}
   - component: {fileID: 7440805571898794504}
-  - component: {fileID: -3082089400388415408}
-  - component: {fileID: 8385001750362508564}
+  - component: {fileID: 2064570704529335128}
+  - component: {fileID: 877667662914587079}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Untagged
@@ -139,7 +139,7 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 1
   AutoObjectParentSync: 1
---- !u!114 &-3082089400388415408
+--- !u!114 &2064570704529335128
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,20 +148,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8681621626026666580}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae1e91c164909d14f8cfec814343aa07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnedObjectPrefab: {fileID: 7623221261988610731, guid: 9344fb3e6bb7c004fac23bc9a9077ce6, type: 3}
---- !u!114 &8385001750362508564
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8681621626026666580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Script: {fileID: 11500000, guid: df2868252ab5c4d1da357e8f11f1b524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SyncPositionX: 1
@@ -182,3 +169,16 @@ MonoBehaviour:
   InLocalSpace: 0
   Interpolate: 1
   SlerpPosition: 0
+--- !u!114 &877667662914587079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8681621626026666580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae1e91c164909d14f8cfec814343aa07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnedObjectPrefab: {fileID: 7623221261988610731, guid: 9344fb3e6bb7c004fac23bc9a9077ce6, type: 3}
