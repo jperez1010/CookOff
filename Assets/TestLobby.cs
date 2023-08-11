@@ -249,12 +249,13 @@ public class TestLobby : MonoBehaviour
                         { KEY_START_GAME, new DataObject(DataObject.VisibilityOptions.Member, relayCode) }
                     }
                 });
-                await SceneManager.LoadSceneAsync(1);
+                
             } catch (LobbyServiceException e)
             {
                 Debug.Log(e);
             }
         }
+        await SceneManager.LoadSceneAsync(1);
     }
 
     public bool IsLobbyHost()

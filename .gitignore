@@ -5,7 +5,8 @@ Packages/
 Temp/
 ProjectSettings/
 UserSettings/
-
+Assets/Mirror/
+*.meta
 *.csproj
 *.sln
 *.vsconfig
