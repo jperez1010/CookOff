@@ -19,18 +19,21 @@ public class MenuPlayer : NetworkBehaviour
 
     public void PressButton(ChefButtonData data)
     {
-        if (money >= data.cost)
+        if (isLocalPlayer)
         {
-            money -= data.cost;
-            CmdRequestBuy(data.id);
-        }
-        else
-        {
-            Debug.Log("Tu eres pobre tu no tienes ifon");
+            if (money >= data.cost)
+            {
+                money -= data.cost;
+                CmdRequestBuy(data.id);
+            }
+            else
+            {
+                Debug.Log("Tu eres pobre tu no tienes ifon");
+            }
         }
     }
 
-    [Command]
+    [Command(requiresAuthority = false)]
     public void CmdRequestBuy(int chefId)
     {
         Debug.Log($"Sending Request for chef {chefId}");
