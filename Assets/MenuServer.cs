@@ -8,41 +8,22 @@ using UnityEngine.UI;
 public class MenuServer : NetworkBehaviour
 {
     [SyncVar]
-    public int cheffs_left;
-    public TMP_Text text;
+    public string chefs;
 
-    public Button button;
-
-    [SyncVar]
-    public int r;
-    [SyncVar]
-    public int g;
-    [SyncVar]
-    public int b; 
+    public MenuUI menu;
     
     public override void OnStartServer()
     {
-        cheffs_left = 5;
-        r = (int) Random.Range(0, 256);
-        g = (int) Random.Range(0, 256);
-        b = (int) Random.Range(0, 256);
+        chefs = "111";
     }
 
-    public void ClickButton() 
+    [Command(requiresAuthority = false)]
+    public void ClickButton(int id) 
     {
-        
-        r = (int)Random.Range(0, 256);
-        g = (int)Random.Range(0, 256);
-        b = (int)Random.Range(0, 256);
-    }
+        char[] temp = chefs.ToCharArray();
+        temp[id] = '0';
+        chefs = temp.ArrayToString();
 
-    void Update()
-    {
-        if (isLocalPlayer && Input.GetKeyDown(KeyCode.X))
-        {
-            Debug.Log("Sending button press");
-            ClickButton();
-        }
+        menu.DeactivateButtonID(id);
     }
-
 }
