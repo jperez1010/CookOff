@@ -6,9 +6,7 @@ using TMPro;
 
 public class MenuPlayer : NetworkBehaviour
 {
-    [SyncVar]
-    public int cheffs_available = 4;
-    public TMP_Text text;
+    public delegate void OnPlayerPressX();
 
     private void Start()
     {
@@ -23,16 +21,11 @@ public class MenuPlayer : NetworkBehaviour
             Debug.Log("Sending button press");
             ClickButton();
         }
-        if (isLocalPlayer)
-        {
-            text.SetText(cheffs_available.ToString());
-        }
     }
 
-    [Command]
+    [Command(requiresAuthority = false)]
     void ClickButton()
     {
         Debug.Log("Button pressed");
-        cheffs_available -= 1;
     }
 }
