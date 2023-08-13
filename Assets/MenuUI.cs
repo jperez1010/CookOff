@@ -13,9 +13,16 @@ public class MenuUI : NetworkBehaviour
     public TMP_Text money;
 
 
-    void Start()
+    public void Awake()
     {
-        menuUI = this;
+        if (menuUI == null)
+        {
+            menuUI = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
     }
 
     public void PressButton(string data)
@@ -23,7 +30,7 @@ public class MenuUI : NetworkBehaviour
         int buttonId;
         int cost;
         (buttonId, cost) = InterpretData(data);
-        MenuPlayer.localPlayer.BuyChef(buttonId, cost);
+        //MenuPlayer.localPlayer.BuyChef(buttonId, cost);
     }
 
     [ClientRpc]
