@@ -11,6 +11,7 @@ public class MenuServer : NetworkBehaviour
     public string chefs;
 
     public MenuUI menu;
+    public TMP_Text text;
     
     public override void OnStartServer()
     {
@@ -18,12 +19,24 @@ public class MenuServer : NetworkBehaviour
     }
 
     [Command(requiresAuthority = false)]
-    public void ClickButton(int id) 
+    public void UpdateButton(string data) 
     {
-        char[] temp = chefs.ToCharArray();
-        temp[id] = '0';
-        chefs = temp.ArrayToString();
+        string[] gungan = data.Split(';');
+        int buttonId = int.Parse(gungan[0]);
+        int cost = int.Parse(gungan[1]);
+        Debug.Log(cost);
+        Debug.Log(buttonId);
+        MenuPlayer player = NetworkServer.localConnection.identity.GetComponent<MenuPlayer>();
+        if (player.money >= cost)
+        {
+            player.money -= cost;
+            text.text = player.money.ToString();
+            char[] temp = chefs.ToCharArray();
+            temp[buttonId] = '0';
+            chefs = temp.ArrayToString();
+            
+            menu.DeactivateButtonID(buttonId);
+        }
 
-        menu.DeactivateButtonID(id);
     }
 }

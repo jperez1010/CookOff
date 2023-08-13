@@ -6,26 +6,6 @@ using TMPro;
 
 public class MenuPlayer : NetworkBehaviour
 {
-    public delegate void OnPlayerPressX();
+    public int money;
 
-    private void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (isLocalPlayer && Input.GetKeyDown(KeyCode.X))
-        {
-            Debug.Log("Sending button press");
-            ClickButton();
-        }
-    }
-
-    [Command(requiresAuthority = false)]
-    void ClickButton()
-    {
-        Debug.Log("Button pressed");
-    }
 }

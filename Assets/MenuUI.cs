@@ -7,6 +7,7 @@ using Mirror;
 public class MenuUI : NetworkBehaviour
 {
     public Button[] buttons = new Button[3];
+    public MenuPlayer player;
 
     // Start is called before the first frame update
     void Start()
@@ -21,8 +22,8 @@ public class MenuUI : NetworkBehaviour
     }
 
     [ClientRpc]
-    public void DeactivateButtonID(int id)
+    public void DeactivateButtonID(int buttonId)
     {
-        buttons[id].interactable = false;
+        buttons[buttonId].interactable = false;
     }
 }
