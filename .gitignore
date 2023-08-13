@@ -5,9 +5,6 @@ Packages/
 Temp/
 ProjectSettings/
 UserSettings/
-Assets/Mirror/
-Assets/com.rlabrecque.steamworks.net/
-Assets/ParrelSync/
 
 *.csproj
 *.sln
