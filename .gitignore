@@ -6,7 +6,9 @@ Temp/
 ProjectSettings/
 UserSettings/
 Assets/Mirror/
-*.meta
+Assets/com.rlabrecque.steamworks.net/
+Assets/ParrelSync/
+
 *.csproj
 *.sln
 *.vsconfig
