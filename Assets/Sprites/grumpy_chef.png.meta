@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e416fff9238768c41a132880e9f2aaa9
+guid: 66d0987bf3454eb489284080a107413f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7741597271164268504
-    second: CookingGameBack_0
+      213: 106440422925981925
+    second: grumpy_chef_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,13 +98,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CookingGameBack_0
+      name: grumpy_chef_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 750
-        height: 422
+        width: 1800
+        height: 1800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 820de127c42509490800000000000000
-      internalID: -7741597271164268504
+      spriteID: 5e8de3e20072a7100800000000000000
+      internalID: 106440422925981925
       vertices: []
       indices: 
       edges: []
@@ -121,7 +121,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c56f128083a0fc145a7e6039623b0ac0
     internalID: 0
     vertices: []
     indices: 
@@ -129,7 +129,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      CookingGameBack_0: -7741597271164268504
+      grumpy_chef_0: 106440422925981925
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
